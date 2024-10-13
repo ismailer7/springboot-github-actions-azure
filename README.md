@@ -1,1 +1,1 @@
-# springboot-github-actions-azure
+# springboot-github-actions-azure v1
