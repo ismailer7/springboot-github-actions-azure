@@ -26,8 +26,14 @@ jobs:
       - uses: actions/checkout@v4
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: mvn clean package
+      - name: Setup up JDK 23
+        uses: actions/setup-java@v4
+        with:
+          java-version: '23'
+          distribution: 'temurin'
+          architecture: x64
+      - name: Run the Maven Build
+        run: mvn --batch-mode clean package
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
